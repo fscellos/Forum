@@ -1,0 +1,29 @@
+<template name="profesionnels">
+    {{#autoForm collection="Pros" id="insertpro" type="insert"}}
+        <fieldset>
+            <legend>Ajouter un professionnel</legend>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='profession'}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Insérer</button>
+    {{/autoForm}}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Profession</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{# each rows }}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{profession}}</td>
+                <td><span class="glyphicon glyphicon-remove" aria-hidden="true" id="{{_id}}"></span></td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
